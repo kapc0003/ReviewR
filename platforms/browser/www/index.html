@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+  <!--above meta tab still breaks app-->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <link rel="stylesheet" type="text/css" media="all" href="css/materialize.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/materialdesignicons.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/index.css">
+  <title>Hello World</title>
+</head>
+<body>
+  <nav class="red lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <span id="backBtn" class="red lighten-1 left"><i class="mdi mdi-arrow-left"></i></span>
+      <span class="brand-logo" id="logo-container">
+        Review&#1071;
+      </span>
+    </div>
+  </nav>
+  
+  <!--                                                               HOME PAGE     -->
+  <div id="home" class="container active-page" data-role="page">
+    <div id="LOADING" class="col s12 m4 center">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      <h4 id="loadingMsg" class="blink">Loading Reviews...</h4>
+    </div>
+  </div>
+  
+  <!--                                                               DETAILED REVIEW PAGE     -->
+  <div id="details" class="container" data-role="page">
+    <div class="col s12 m4 center">
+      <h4 id="detTitle"></h4>
+      <span id="detRating" class="yellow-text text-darken-2">
+        <i class="detStars"></i>
+        <i class="detStars"></i>
+        <i class="detStars"></i>
+        <i class="detStars"></i>
+        <i class="detStars"></i>
+      </span><br>
+      <blockquote id="detText" class="left"></blockquote><br>
+      <img src="" id="detImage" class="responsive-img">
+    </div>    
+  </div>
+  
+  <!--                                                               ADD REVIEW PAGE     -->
+  <div id="add" class="container" data-role="page">
+   <div class="row">
+     <form action="#" id="reviewForm" class="col s12">
+       <div class="row">
+         <div class="input-field col s12 center">
+           <input placeholder="Title" type="text" id="addTitle" class="validate" length="40">
+         </div>
+       </div>
+       <div class="row">
+         <div class="input-field col s12 center">
+           <textarea placeholder="Type review here" type="text" id="addReview" class="materialize-textarea" length="255"></textarea>
+         </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 center">
+            <h6 class="left light-grey-text lighten-2">Rating:</h6>
+            <p class="range-field">
+            <input type="range" id="addRating" min="1" max="5"/>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 center">
+            <span id="photoBtn" class="waves-effect waves-light btn teal blink">
+              Snap Photo <i class="mdi mdi-camera right"></i>
+            </span>
+          </div><br><br>
+          <div class="col s12 center" id="addImgCont">
+            <img src="#" alt="review image" id="addImg" class="responsive-img hide">
+          </div><br>
+          <div class="col s12 center">
+            <button id="saveBtn" class="btn waves-effect waves-light teal lighten-1 disabled" type="submit" disabled>
+              Save Review <i class="mdi mdi-cloud-upload right"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--                                                               ADD BTN     -->  
+  <a href="#add" id="addBtn" class="btn-floating btn-large waves-effect waves-light teal addBtn">
+      <i class="mdi mdi-plus"></i>
+  </a>    
+  <!--                                                               FOOTER     -->
+  <footer id="footer" class="page-footer red lighten-1 center">
+    <div class="footer-copyright red lighten-1 container center">
+      <span class="white-text">&copy; Paul Coyte</span>
+    </div>
+  </footer>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/hammer.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
